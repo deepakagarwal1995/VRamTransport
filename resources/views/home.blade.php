@@ -25,7 +25,7 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans font-semibold leading-normal text-sm">New Orders</p>
+                                    <p class="mb-0  font-semibold leading-normal text-sm">New Orders</p>
                                     <h5 class="mb-0 font-bold">
                                       {{$OrderDetail}}
 
@@ -49,7 +49,7 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans font-semibold leading-normal text-sm">In Transport</p>
+                                    <p class="mb-0  font-semibold leading-normal text-sm">In Transport</p>
                                     <h5 class="mb-0 font-bold">
                                       {{$OrderTransport}}
 
@@ -73,7 +73,7 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans font-semibold leading-normal text-sm">Delivered</p>
+                                    <p class="mb-0  font-semibold leading-normal text-sm">Delivered</p>
                                     <h5 class="mb-0 font-bold">
                                        {{$OrderDelivery}}
 
@@ -97,7 +97,7 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans font-semibold leading-normal text-sm">Total Weight </p>
+                                    <p class="mb-0  font-semibold leading-normal text-sm">Total Weight </p>
                                     <h5 class="mb-0 font-bold">
                                         {{$orderWt->wt}}
 
