@@ -1,9 +1,28 @@
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-    integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-    data-cf-beacon='{"rayId":"866557cded5df292","version":"2024.2.4","token":"1b7cbb72744b40c580f8633c6b62637e"}'
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
  <script src="{{ config('app.url') }}/assets/js/plugins/perfect-scrollbar.min.js" async></script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <script src="{{ config('app.url') }}/assets/js/soft-ui-dashboard-tailwind.min.js?v=1.0.5" async></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if (Session::has('success'))
+<script>
+    swal("Success", "{{ Session::get('success') }}", 'success', {
+                buttons: {
+                    confirm: "OK",
+                },
+            });
+</script>
+@endif
+@if (Session::has('error'))
+<script>
+    swal("Error", "{{ Session::get('error') }}", 'error', {
+                buttons: {
+                    confirm: "OK",
+                },
+            });
+</script>
+@endif

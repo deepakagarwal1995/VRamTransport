@@ -14,7 +14,7 @@
     @yield('head')
 </head>
 
-<body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
+<body class="m-0   text-base antialiased font-normal leading-default bg-gray-50 text-slate-500" style="background: rgb(127 0 23 / 5%); font-family: 'Roboto', sans-serif;">
 
     @include('inc.header')
 
