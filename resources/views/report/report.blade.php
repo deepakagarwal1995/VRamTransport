@@ -211,7 +211,7 @@
                                             <td
                                                 class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
 
-                                                <a href="{{ route('delivery.create', $order->id) }}"
+                                                <a href="{{ route('delivery.view', $order->id) }}"
                                                     class="p-2 w-fit text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white">View
                                                     Details</a>
 
