@@ -13,8 +13,11 @@
     </div>
     <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
     <div class="items-center block w-auto max-h-screen overflow-auto   grow basis-full">
+        <p class="py-2.7  text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg   px-4 font-semibold text-slate-700 transition-colors uppercase text-center">{{ auth()->user()->role }} Panel</p>
         <ul class="flex flex-col pl-0 mb-0">
-            <li class="mt-0.5 w-full">
+
+            @if (auth()->user()->role=='admin' || auth()->user()->role=='subadmin')
+             <li class="mt-0.5 w-full">
                 <a class="py-2.7  text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg   px-4 font-semibold text-slate-700 transition-colors"
                     href="{{ config('app.url') }}">
                     <div
@@ -24,6 +27,21 @@
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
                 </a>
             </li>
+             <li class="mt-0.5 w-full">
+                <a class="py-2.7  text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg   px-4 font-semibold text-slate-700 transition-colors"
+                    href="{{ route('report') }}">
+                    <div
+                        class="bg-gradient-to-tl  to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa fa-file"></i>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Reports</span>
+                </a>
+            </li>
+
+            @endif
+
+
+
             <li class="mt-0.5 w-full">
                 <a class="py-2.7  text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg   px-4 font-semibold text-slate-700 transition-colors"
                     href="{{ route('order.index') }}">
@@ -54,16 +72,42 @@
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Delivery Details (step3)</span>
                 </a>
             </li>
+
+
+            @if (auth()->user()->role=='admin')
             <li class="mt-0.5 w-full">
                 <a class="py-2.7  text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg   px-4 font-semibold text-slate-700 transition-colors"
-                    href="{{ route('logout') }}">
+                    href="{{ route('user.index') }}">
                     <div
+                        class="bg-gradient-to-tl  to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Users</span>
+                </a>
+            </li>
+
+            @endif
+
+            <li class="mt-0.5 w-full">
+
+
+
+                                    <a class="py-2.7  text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg   px-4 font-semibold text-slate-700 transition-colors" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <div
                         class="bg-gradient-to-tl  to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                         <i class="fa fa-sign-out"></i>
                     </div>
                     <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Logout</span>
-                </a>
-            </li>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+
+
 
         </ul>
     </div>

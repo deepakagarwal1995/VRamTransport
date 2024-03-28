@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\OrderDeliveryController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\OrderTransportController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +24,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/report', [HomeController::class, 'report'])->name('report');
 
 //ORDER DETAILS
 Route::resource('order', OrderDetailController::class);
@@ -35,3 +38,4 @@ Route::get('/transport/{id}/create', [OrderTransportController::class, 'create']
 Route::resource('delivery', OrderDeliveryController::class);
 Route::get('/delivery/{id}/create', [OrderDeliveryController::class, 'create'])->name('delivery.create');
 Route::get('/delivery/{id}/view', [OrderDeliveryController::class, 'view'])->name('delivery.view');
+Route::resource('user', UserController::class);
